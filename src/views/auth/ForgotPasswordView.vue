@@ -54,3 +54,12 @@ export default defineComponent({
   </main>
   <FooterItem />
 </template>
+
+<style scoped>
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - 7rem);
+}
+</style>
