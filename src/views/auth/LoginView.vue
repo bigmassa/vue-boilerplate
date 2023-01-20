@@ -53,7 +53,7 @@ export default defineComponent({
               Forgotten your password?
             </RouterLink>
           </div>
-          <FormKit type="submit" label="Login" input-class="" />
+          <FormKit type="submit" label="Login" />
         </FormKit>
       </div>
       <div></div>
