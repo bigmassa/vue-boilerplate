@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { mount, RouterLinkStub } from "@vue/test-utils";
 import { defaultConfig, plugin } from "@formkit/vue";
 import LoginView from "@/views/auth/LoginView.vue";
@@ -11,13 +11,6 @@ function mountComponent() {
   return mount(LoginView, {
     global: {
       stubs: {
-        CenterFormWrapper: {
-          template: "<slot></slot>",
-          props: {
-            title: String,
-            welcome: String,
-          },
-        },
         RouterLink: RouterLinkStub,
       },
       mocks: {

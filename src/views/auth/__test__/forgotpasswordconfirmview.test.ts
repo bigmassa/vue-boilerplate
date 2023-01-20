@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { mount, RouterLinkStub } from "@vue/test-utils";
 import { defaultConfig, plugin } from "@formkit/vue";
 import ForgotPasswordConfirmView from "@/views/auth/ForgotPasswordConfirmView.vue";
@@ -13,13 +13,6 @@ function mountComponent() {
   return mount(ForgotPasswordConfirmView, {
     global: {
       stubs: {
-        CenterFormWrapper: {
-          template: "<slot></slot>",
-          props: {
-            title: String,
-            welcome: String,
-          },
-        },
         RouterLink: RouterLinkStub,
       },
       mocks: {

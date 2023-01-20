@@ -1,14 +1,14 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { authService } from "@/services/auth";
-import PageWrapper from "@/components/PageWrapper.vue";
 import { prepareErrors } from "@/errorhandler";
-import MessageBox from "@/components/MessageBox.vue";
+import NavBar from "@/components/NavBar.vue";
+import FooterItem from "@/components/FooterItem.vue";
 
 export default defineComponent({
   components: {
-    MessageBox,
-    PageWrapper,
+    FooterItem,
+    NavBar,
   },
   data() {
     return {
@@ -42,46 +42,44 @@ export default defineComponent({
 </script>
 
 <template>
-  <PageWrapper title="Profile">
-    <div class="max-w-xl">
-      <MessageBox v-if="success" class="mb-6" type="message-success">
-        <p class="font-bold">Success</p>
-        <p>Your profile was updated successfully.</p>
-      </MessageBox>
+  <NavBar />
+  <header class="container">
+    <hgroup>
+      <h1>Profile</h1>
+      <h2>Keep your details upto date below</h2>
+    </hgroup>
+  </header>
+  <main class="container">
+    <section>
       <FormKit
         id="appform"
         v-model="data"
         :actions="false"
         type="form"
         @submit="submit"
-        messages-class="mb-4"
       >
         <FormKit
           label="Email address"
           name="email"
           type="email"
           validation="required|email"
-          outer-class="mb-6"
-          input-class="w-full"
         />
         <FormKit
           label="First name"
           name="first_name"
           type="text"
           validation="required"
-          outer-class="mb-6"
-          input-class="w-full"
         />
         <FormKit
           label="Last name"
           name="last_name"
           type="text"
           validation="required"
-          outer-class="mb-6"
-          input-class="w-full"
         />
-        <FormKit type="submit" label="Update" input-class="button-primary" />
+        <FormKit type="submit" label="Update" />
       </FormKit>
-    </div>
-  </PageWrapper>
+      <p v-if="success">Your profile was updated successfully.</p>
+    </section>
+  </main>
+  <FooterItem />
 </template>

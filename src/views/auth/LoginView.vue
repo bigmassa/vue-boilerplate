@@ -1,12 +1,12 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { authService } from "@/services/auth";
-import CenterFormWrapper from "@/components/CenterFormWrapper.vue";
 import { prepareErrors } from "@/errorhandler";
+import FooterItem from "@/components/FooterItem.vue";
 
 export default defineComponent({
   components: {
-    CenterFormWrapper,
+    FooterItem,
   },
   data() {
     return {
@@ -28,42 +28,36 @@ export default defineComponent({
 </script>
 
 <template>
-  <CenterFormWrapper title="Login" welcome="Access your account">
-    <FormKit
-      id="appform"
-      :actions="false"
-      type="form"
-      messages-class="mb-4"
-      @submit="submit"
-    >
-      <FormKit
-        label="Email address"
-        name="username"
-        placeholder="johndoe@example.com"
-        type="email"
-        validation="required|email"
-        outer-class="mb-6"
-        input-class="w-full"
-      />
-      <FormKit
-        label="Password"
-        name="password"
-        placeholder="password"
-        type="password"
-        validation="required"
-        outer-class="mb-6"
-        input-class="w-full"
-      />
-      <div class="flex mb-6">
-        <RouterLink class="ml-auto text-sm" to="/forgotten-password">
-          Forgotten your password?
-        </RouterLink>
+  <main class="container">
+    <article class="grid">
+      <div>
+        <hgroup>
+          <h1>Login</h1>
+          <h2>Access your account</h2>
+        </hgroup>
+        <FormKit id="appform" :actions="false" type="form" @submit="submit">
+          <FormKit
+            name="username"
+            placeholder="johndoe@example.com"
+            type="email"
+            validation="required|email"
+          />
+          <FormKit
+            name="password"
+            placeholder="password"
+            type="password"
+            validation="required"
+          />
+          <div>
+            <RouterLink to="/forgotten-password">
+              Forgotten your password?
+            </RouterLink>
+          </div>
+          <FormKit type="submit" label="Login" input-class="" />
+        </FormKit>
       </div>
-      <FormKit
-        type="submit"
-        label="Login"
-        input-class="button-primary w-full"
-      />
-    </FormKit>
-  </CenterFormWrapper>
+      <div></div>
+    </article>
+  </main>
+  <FooterItem />
 </template>

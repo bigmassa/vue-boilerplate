@@ -4,7 +4,7 @@ import router from "./router";
 import { defaultConfig, plugin } from "@formkit/vue";
 import axios from "axios";
 import { setupInterceptorsTo } from "./interceptors";
-import "./assets/main.css";
+import "./assets/main.scss";
 
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 

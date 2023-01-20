@@ -17,9 +17,13 @@ export default defineComponent({
 </script>
 
 <template>
-  <header class="flex py-3 px-4 mb-6">
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink class="ml-auto" to="/profile">Profile</RouterLink>
-    <a class="ml-4" @click="logout()">Logout</a>
-  </header>
+  <nav class="container-fluid">
+    <ul>
+      <li><RouterLink to="/">Home</RouterLink></li>
+    </ul>
+    <ul>
+      <li><RouterLink class="ml-auto" to="/profile">Profile</RouterLink></li>
+      <li><a class="ml-4" @click="logout()">Logout</a></li>
+    </ul>
+  </nav>
 </template>

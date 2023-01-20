@@ -1,13 +1,11 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { authService } from "@/services/auth";
-import CenterFormWrapper from "@/components/CenterFormWrapper.vue";
-import MessageBox from "@/components/MessageBox.vue";
+import FooterItem from "@/components/FooterItem.vue";
 
 export default defineComponent({
   components: {
-    CenterFormWrapper,
-    MessageBox,
+    FooterItem,
   },
   data() {
     return {
@@ -30,37 +28,29 @@ export default defineComponent({
 </script>
 
 <template>
-  <CenterFormWrapper
-    title="Forgotten Your Password"
-    welcome="Request details to change your password."
-  >
-    <FormKit
-      id="appform"
-      :actions="false"
-      type="form"
-      messages-class="mb-4"
-      @submit="submit"
-    >
-      <FormKit
-        label="Email address"
-        name="email"
-        placeholder="johndoe@example.com"
-        type="email"
-        validation="required|email"
-        outer-class="mb-6"
-        input-class="w-full"
-      />
-      <FormKit
-        type="submit"
-        label="Reset"
-        input-class="button-primary w-full"
-      />
-    </FormKit>
-    <MessageBox v-if="success" type="message-info">
-      <p>
-        Assuming the email exists in our system. We will send details of what to
-        do next.
-      </p>
-    </MessageBox>
-  </CenterFormWrapper>
+  <main class="container">
+    <article class="grid">
+      <div>
+        <hgroup>
+          <h1>Forgotten Your Password</h1>
+          <h2>Request details to change your password.</h2>
+        </hgroup>
+        <FormKit id="appform" :actions="false" type="form" @submit="submit">
+          <FormKit
+            name="email"
+            placeholder="your email address"
+            type="email"
+            validation="required|email"
+          />
+          <FormKit type="submit" label="Reset" />
+        </FormKit>
+        <p v-if="success">
+          Assuming the email exists in our system. We will send details of what
+          to do next.
+        </p>
+      </div>
+      <div></div>
+    </article>
+  </main>
+  <FooterItem />
 </template>

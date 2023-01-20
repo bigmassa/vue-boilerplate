@@ -1,17 +1,11 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { mount, RouterLinkStub } from "@vue/test-utils";
-import HomeView from "@/views/HomeView.vue";
+import NavBar from "@/components/NavBar.vue";
 
 function mountComponent() {
-  return mount(HomeView, {
+  return mount(NavBar, {
     global: {
       stubs: {
-        FooterItem: {
-          template: "<footer></footer>",
-        },
-        NavBar: {
-          template: "<nav></nav>",
-        },
         RouterLink: RouterLinkStub,
       },
     },
@@ -20,7 +14,7 @@ function mountComponent() {
 
 let comp: ReturnType<typeof mountComponent>;
 
-describe("HomeView", () => {
+describe("NavBar", () => {
   beforeEach(() => {
     comp = mountComponent();
   });
