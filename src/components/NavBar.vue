@@ -22,8 +22,8 @@ export default defineComponent({
       <li><RouterLink to="/">Home</RouterLink></li>
     </ul>
     <ul>
-      <li><RouterLink class="ml-auto" to="/profile">Profile</RouterLink></li>
-      <li><a class="ml-4" @click="logout()">Logout</a></li>
+      <li><RouterLink to="/profile">Profile</RouterLink></li>
+      <li><a @click="logout()">Logout</a></li>
     </ul>
   </nav>
 </template>
