@@ -81,5 +81,5 @@ export default defineComponent({
       <p v-if="success">Your profile was updated successfully.</p>
     </section>
   </main>
-  <FooterItem />
+  <FooterItem class="container" />
 </template>

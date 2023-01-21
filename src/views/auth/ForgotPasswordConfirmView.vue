@@ -65,7 +65,7 @@ export default defineComponent({
       <div></div>
     </article>
   </main>
-  <FooterItem />
+  <FooterItem class="container" />
 </template>
 
 <style scoped>

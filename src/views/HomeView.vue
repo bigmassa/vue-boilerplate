@@ -35,5 +35,5 @@ export default defineComponent({
       </footer>
     </article>
   </main>
-  <FooterItem />
+  <FooterItem class="container" />
 </template>
