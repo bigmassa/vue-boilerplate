@@ -38,7 +38,7 @@ export default defineComponent({
         <FormKit id="appform" :actions="false" type="form" @submit="submit">
           <FormKit
             name="username"
-            placeholder="johndoe@example.com"
+            placeholder="email"
             type="email"
             validation="required|email"
           />
