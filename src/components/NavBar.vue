@@ -22,8 +22,18 @@ export default defineComponent({
       <li><RouterLink to="/">Home</RouterLink></li>
     </ul>
     <ul>
-      <li><RouterLink to="/profile">Profile</RouterLink></li>
-      <li><a @click="logout()">Logout</a></li>
+      <li>Vue Boilerplate</li>
+    </ul>
+    <ul>
+      <li>
+        <details role="list" dir="rtl">
+          <summary aria-haspopup="listbox" role="link">Me</summary>
+          <ul role="listbox">
+            <li><RouterLink to="/profile">My Profile</RouterLink></li>
+            <li><a @click="logout()">Sign Out</a></li>
+          </ul>
+        </details>
+      </li>
     </ul>
   </nav>
 </template>
