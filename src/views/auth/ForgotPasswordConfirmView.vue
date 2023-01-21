@@ -35,11 +35,11 @@ export default defineComponent({
 
 <template>
   <main class="container">
-    <article class="grid">
+    <div class="grid">
       <div>
         <hgroup>
-          <h1>Forgotten Your Password</h1>
-          <h2>Request details to change your password.</h2>
+          <h1>Change Your Password</h1>
+          <h2>Set a new password below.</h2>
         </hgroup>
         <FormKit id="appform" :actions="false" type="form" @submit="submit">
           <FormKit
@@ -49,7 +49,7 @@ export default defineComponent({
             validation="required|length:6"
           />
           <FormKit
-            name="password_confirm"
+            name="confirm"
             placeholder="repeat your password"
             type="password"
             validation="required|confirm"
@@ -63,9 +63,9 @@ export default defineComponent({
         </p>
       </div>
       <div></div>
-    </article>
+    </div>
   </main>
-  <FooterItem class="container" />
+  <FooterItem class="container-fluid" />
 </template>
 
 <style scoped>
@@ -73,6 +73,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: calc(100vh - 7rem);
+  min-height: calc(100vh - 2.5rem);
 }
 </style>

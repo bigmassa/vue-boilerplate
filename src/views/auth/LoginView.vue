@@ -29,11 +29,11 @@ export default defineComponent({
 
 <template>
   <main class="container">
-    <article class="grid">
+    <div class="grid">
       <div>
         <hgroup>
           <h1>Login</h1>
-          <h2>Access your account</h2>
+          <h2>Access your account.</h2>
         </hgroup>
         <FormKit id="appform" :actions="false" type="form" @submit="submit">
           <FormKit
@@ -57,9 +57,9 @@ export default defineComponent({
         </FormKit>
       </div>
       <div></div>
-    </article>
+    </div>
   </main>
-  <FooterItem class="container" />
+  <FooterItem class="container-fluid" />
 </template>
 
 <style scoped>
@@ -67,7 +67,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: calc(100vh - 7rem);
+  min-height: calc(100vh - 2.5rem);
 }
 .text-right {
   text-align: right;
