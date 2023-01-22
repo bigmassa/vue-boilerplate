@@ -28,7 +28,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <main class="container">
+  <main class="container flex flex-col justify-center">
     <div class="grid">
       <div>
         <hgroup>
@@ -57,9 +57,6 @@ export default defineComponent({
 
 <style scoped>
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   min-height: calc(100vh - 2.5rem);
 }
 </style>
